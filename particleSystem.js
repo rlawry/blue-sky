@@ -35,7 +35,7 @@ class ParticlesSystem{
         for(let i=this.particles.length-1;i>=0;i--){
             let particle=this.particles[i];
             particle.draw(cc,dt);
-            if(particle.life<0){
+            if(particle.pos.x<0||particle.pos.x>can.width||particle.pos.y>can.height||particle.pos.y<0){
                 this.particles.splice(i,1);
             }
             //console.log(particle.dir.x);
